@@ -1,14 +1,13 @@
 let i = 0;
-let text = "- .-. .- -. ... .-.. .- - --- .-."; /* The text */
+let text = [`- .-. .- -. ... .-.. .- - --- .-.`]; /* The text */
 let speed = 50; /* The speed/duration of the effect in milliseconds */
 
-function typeWriter() {
-    
-  if (i < text.length) {
-    document.getElementById("title").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+typewriter = () => {
+    document.getElementById('title').innerHTML = text[0].substring(0, i) + "<span>\u25ae</span>";
+
+    if (i++ != text[0].length) {
+        setTimeout(typewriter, speed);
+    }
 }
 
-typeWriter();
+window.addEventListener('load', typewriter);

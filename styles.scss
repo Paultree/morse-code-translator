@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: red;
 }
 
 main {
@@ -22,6 +23,7 @@ main {
     width: 50%;
     align-self: center;
     border-radius: 10%;
+    background-color: white;
 }
 
 h1 {
@@ -31,4 +33,33 @@ h1 {
 #title {
     margin-bottom: 2rem;
     border-bottom: 3px dashed black;
+}
+
+textarea {
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+
+    &__output {
+        margin: 0.5rem;
+    }
+}
+
+#output {
+    border: 1px solid black;
+    height: 15vh;
+    width: 80%;
+    margin: 0.5rem auto;
+}
+
+span {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
