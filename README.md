@@ -14,3 +14,8 @@
 -   Split your code between data, logic functions and dom functions - []
 -   Develop unit tests for all of your logic functions - []
 -   Explore and discover edge cases in your code to further develop your tests - []
+
+28/11/2022
+- Implemented basic HTML layout
+- Implemented CSS layout
+- Placed some animation.
