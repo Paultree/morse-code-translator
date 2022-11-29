@@ -1,3 +1,6 @@
+// import {translator} from 'morse-module.js'
+
+// handles the blinking animation on page//
 let i = 0;
 let text = [`- .-. .- -. ... .-.. .- - --- .-.`]; /* The text */
 let speed = 50; /* The speed/duration of the effect in milliseconds */
@@ -11,3 +14,5 @@ typewriter = () => {
 }
 
 window.addEventListener('load', typewriter);
+
+//
