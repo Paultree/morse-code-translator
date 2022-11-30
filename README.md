@@ -25,3 +25,7 @@
 - Created a module responsible for storing the translating functions.
 - Created an object that stores key value pairs in the format of english letter key : morse code value.
 - Updated the placeholder text in textarea to be the same as https://morsecode.world/international/translator.html
+
+30/11/2022
+- Created dom-modules.js file which houses functions for handling DOM manipulations.
+- Added basic functionality to 'translate' button. 
