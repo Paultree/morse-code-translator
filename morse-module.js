@@ -1,5 +1,5 @@
 // A to Z in Morse Code
-const translator = {
+export const translator = {
    "A": ".-",
    "B": "-...",
    "C": "-.-.",
@@ -29,26 +29,26 @@ const translator = {
 
 
 //splits sentence into array of words//
-function splitSentence(input, seperator) {
+export function splitSentence(input, seperator) {
    return input.toUpperCase().split(seperator);
 }
 
 //splits each word in first array word into array of letters --> ie. [[s,p,a,g,h,e,t,t,i], [m,o,n,s,t,e,r]]//
-function splitWord(input,seperator) {
+export function splitWord(input,seperator) {
    return input.map(word => {
       return word.split(seperator);
    })
 }
 
 //translates each letter in array to morse//
-function toMorse(input) {
+export function toMorse(input) {
    return input.map((letter) => {
      return translator[letter];
    });   
 }
 
 //translates each morse code in array to letter// input has to be an array//
-function toEnglish(input) {
+export function toEnglish(input) {
    return input.map((morse) => {
       return Object.keys(translator).find(key => translator[key] === morse);
    })
@@ -88,7 +88,7 @@ function translateMorseToEnglish(input) {
 
 //For now, keep the above two functions intact to not forget how it works. However, we will create 
 // a singular function that takes in a few more parameters so that it basically runs similarly to both the above.
-function translateUserInput(input, sentenceSeperator, letterSeperator, letterJoiner, sentenceJoiner) {
+export function translateString(input, sentenceSeperator, letterSeperator, letterJoiner, sentenceJoiner) {
    let sentenceArr = splitSentence(input, sentenceSeperator);
 
    let nestedLetterArr = splitWord(sentenceArr, letterSeperator);

@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: red;
+    background-color: rgb(174, 22, 22);
 }
 
 main {
@@ -37,6 +37,9 @@ h1 {
 
 textarea {
     width: 100%;
+}
+
+textarea::placeholder {
     text-align: center;
 }
 
@@ -44,6 +47,14 @@ textarea {
 
     &__output {
         margin: 0.5rem;
+
+    }
+
+    &__form {
+
+        &--submit {
+            margin-top: 0.5rem;
+        }
     }
 }
 
