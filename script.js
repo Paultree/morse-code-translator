@@ -29,6 +29,7 @@ const output = document.getElementById('output');
 btn.addEventListener('click', (e)=> {
     e.preventDefault();
     let string = userInput.value;
+    output.innerText = '';
     console.log(string)
     if ((/[-._]/gm).test(string)) {
       const translatedString = translateString(string, "/", " ", "", " ");  
