@@ -8,8 +8,8 @@
 
 -   Make sure to handle spaces properly (ie. there is 1 space between English words, but one space between Morse Code characters) - [ x ]
 
--   Bonus: Handle other characters as well - []
--   Bonus: Detect if a piece of text is english or morse and translate accordingly - []
+-   Bonus: Handle other characters as well - [ x ]
+-   Bonus: Detect if a piece of text is english or morse and translate accordingly - [ x ]
 
 -   Split your code between data, logic functions and dom functions - [ x ]
 -   Develop unit tests for all of your logic functions - []
@@ -29,3 +29,8 @@
 30/11/2022
 - Created dom-modules.js file which houses functions for handling DOM manipulations.
 - Added basic functionality to 'translate' button. 
+- Finished approach 1 which utilises a translate button.
+    - To-do:
+        - Make another branch for soln two.. doing live translations..
+        - make another textarea that accepts morse input and outputs morse code. Similarly the other text area only accepts english letters and outputs english letter.
+        - Add an error where next input has to match the previous character...
