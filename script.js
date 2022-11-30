@@ -1,4 +1,4 @@
-import {translator, splitSentence, splitWord, toMorse, toEnglish, translateString} from './morse-module.js'
+import {translator, splitSentence, splitWord, toMorse, toEnglish, translateString, translateMorseToEnglish, translateEnglishToMorse, toOther} from './morse-module.js'
 
 import {appendText} from './dom-modules.js';
 
@@ -29,17 +29,14 @@ const output = document.getElementById('output');
 btn.addEventListener('click', (e)=> {
     e.preventDefault();
     let string = userInput.value;
-    if (string.match(/[-._ ]/gm)) {
-        const translatedString = translateString(
-          string,
-          '/',
-          ' ',
-          '',
-          ' '
-        );
-        console.log(translatedString);
-        appendText(output, 'p', translatedString);
+    console.log(string)
+    if ((/[-._]/gm).test(string)) {
+      const translatedString = translateString(string, "/", " ", "", " ");  
+      output.innerText = translatedString;
+    } else if ((/[a-zA-Z]/gm).test(string)) {
+      const translatedString = translateString(string, " ", "", " ", "/");
+      output.innerText = translatedString;
     }
-
 })
+
 

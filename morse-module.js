@@ -33,6 +33,8 @@ export function splitSentence(input, seperator) {
    return input.toUpperCase().split(seperator);
 }
 
+
+
 //splits each word in first array word into array of letters --> ie. [[s,p,a,g,h,e,t,t,i], [m,o,n,s,t,e,r]]//
 export function splitWord(input,seperator) {
    return input.map(word => {
@@ -54,8 +56,20 @@ export function toEnglish(input) {
    })
 }
 
+export function toOther(input) {
+   return input.map((character) => {
+      if (character.match(/[a-zA-Z]/gm)) {
+         return translator[character];
+      } else {
+         return Object.keys(translator).find(
+           (key) => translator[key] === character
+         );
+      }
+   })
+}
+
 //ENGLISH TO MORSE CODE//
-function translateEnglishToMorse(input) {
+export function translateEnglishToMorse(input) {
    let sentenceArr = splitSentence(input, ' ');
 
    let nestedLetterArr = splitWord(sentenceArr, '');
@@ -66,13 +80,14 @@ function translateEnglishToMorse(input) {
       let translatedWord = toMorse(word);
       translatedSentence.push(translatedWord.join(' '));
    }
-   return translatedSentence.join('/')
+   
+   return translatedSentence.join('/');
 }
 
 //"... .--. .- --. .... . - - ../-- --- -. ... - . .-.";// spaghetti monster
 
 //MORSE CODE TO ENGLISH//
-function translateMorseToEnglish(input) {
+export function translateMorseToEnglish(input) {
    let sentenceArr = splitSentence(input, '/');
    
    let nestedLetterArr = splitWord(sentenceArr, " ");
@@ -96,7 +111,7 @@ export function translateString(input, sentenceSeperator, letterSeperator, lette
    let translatedSentence = [];
 
    for (let word of nestedLetterArr) {
-     let translatedWord = toEnglish(word);
+     let translatedWord = toOther(word);
      translatedSentence.push(translatedWord.join(letterJoiner));
    }
    return translatedSentence.join(sentenceJoiner);
