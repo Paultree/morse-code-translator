@@ -88,3 +88,16 @@ function translateMorseToEnglish(input) {
 
 //For now, keep the above two functions intact to not forget how it works. However, we will create 
 // a singular function that takes in a few more parameters so that it basically runs similarly to both the above.
+function translateUserInput(input, sentenceSeperator, letterSeperator, letterJoiner, sentenceJoiner) {
+   let sentenceArr = splitSentence(input, sentenceSeperator);
+
+   let nestedLetterArr = splitWord(sentenceArr, letterSeperator);
+
+   let translatedSentence = [];
+
+   for (let word of nestedLetterArr) {
+     let translatedWord = toEnglish(word);
+     translatedSentence.push(translatedWord.join(letterJoiner));
+   }
+   return translatedSentence.join(sentenceJoiner);
+}
