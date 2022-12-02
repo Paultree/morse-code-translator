@@ -12,7 +12,7 @@
 -   Bonus: Detect if a piece of text is english or morse and translate accordingly - [ x ]
 
 -   Split your code between data, logic functions and dom functions - [ x ]
--   Develop unit tests for all of your logic functions - []
+-   Develop unit tests for all of your logic functions - [ x ]
 -   Explore and discover edge cases in your code to further develop your tests - [ x ]
 
 28/11/2022
@@ -34,3 +34,7 @@
         - Make another branch for soln two.. doing live translations..
         - make another textarea that accepts morse input and outputs morse code. Similarly the other text area only accepts english letters and outputs english letter.
         - Add an error where next input has to match the previous character...
+
+2/12/2022
+- Changed to live translation.
+- put in 4 regex that only allows user to input alphabet and -_./ chararcters.
