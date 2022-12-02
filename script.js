@@ -26,17 +26,22 @@ const btn = document.getElementById('button');
 const output = document.getElementById('output');
 
 //event listener that converts user input to morse/english depending on user input.
-btn.addEventListener('click', (e)=> {
-    e.preventDefault();
-    let string = userInput.value;
-    console.log(string)
-    if ((/[-._]/gm).test(string)) {
-      const translatedString = translateString(string, "/", " ", "", " ");  
-      output.innerText = translatedString;
-    } else if ((/[a-zA-Z]/gm).test(string)) {
-      const translatedString = translateString(string, " ", "", " ", "/");
-      output.innerText = translatedString;
-    }
-})
+
+userInput.addEventListener("keyup", (e) => {
+  e.preventDefault();
+
+  output.innerText = '';
+
+  let string = userInput.value;
+  
+  if (/[-._]/gm.test(string)) {
+    const translatedString = translateString(string, "/", " ", "", " ");
+    output.innerText = translatedString;
+  } else if (/[a-zA-Z]/gm.test(string)) {
+    const translatedString = translateString(string, " ", "", " ", "/");
+    output.innerText = translatedString;
+  }
+
+});
 
 
