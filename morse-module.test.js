@@ -1,6 +1,4 @@
 
-
-import { describe } from "yargs";
 import { splitSentence, splitWord, toOther, translateString } from "./morse-module";
 
 describe('Tests cases for a function that splits a sentence', () => {
@@ -65,4 +63,21 @@ describe('Tests cases for a function that translates text from an array', () => 
     });
 });
 
-describe('Tests cases for a function that translates a string to another language')
+describe('Tests cases for a function that translates a string to another language', () => {
+    it('translates an entire string input to english', () => {
+        expect(translateString("SPAGHETTI MONSTER", " ", "", " ", " / ")).toBe(
+          "... .--. .- --. .... . - - .. / -- --- -. ... - . .-."
+        );
+    });
+    it('translates an entire string input to morse', () => {
+        expect(
+          translateString(
+            "... .--. .- --. .... . - - .. / -- --- -. ... - . .-.",
+            "/",
+            " ",
+            "",
+            " "
+          )
+        ).toBe("SPAGHETTI MONSTER");
+    }) 
+})

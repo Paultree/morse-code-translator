@@ -21,44 +21,43 @@ const userInput = document.getElementById('userInput');
 
 const output = document.getElementById('output');
 
+const errorMessage = document.getElementById('errorMessage');
+
 //event listener that converts user input to morse/english depending on user input.
 
   const engRegex = /[a-zA-Z]/gm;
 
   const morseRegex = /[-._\/]/gm;
 
-  const numRegex = /[0-9]/gm;
+  const numRegex = /[0-9]/;
 
-  const specRegex = /[~`!#$%\^&*+=\-\[\]\';,(){}|\\":<>\?]/gm;
+  const specRegex = /[~`!#$%\^&*+=\\[\]\';,(){}|\\":<>\?]/;
 
 userInput.addEventListener("keyup", (e) => {
   
-  output.innerText = "";
-
   let string = userInput.value;
 
-  if (numRegex.test(e.key) || specRegex.test(e.key)) {
-    console.log(e.key);
-    output.innerText =
-      'Please only use alphabetical letters or ".", "/", "-" or "_".';
+  output.innerText = "";
+
+  errorMessage.innerText = '';
+
+  if (e.key.match(numRegex) || e.key.match(specRegex)) {
+    errorMessage.innerText = 'Invalid input. Only use alphabet characters or morse code.'
     return;
-  }
-  
-  if (morseRegex.test(string)) {
-    console.log('a');
-    const translatedString = translateString(string, "/", " ", "", " ");
-    output.innerText = translatedString;
-  } else if (engRegex.test(string)) {
-    console.log('b');
-    const translatedString = translateString(string, " ", "", " ", " / ");
-    output.innerText = translatedString;
   }
 
-  if (engRegex.test(string) && morseRegex.test(string)) {
-    console.log("nuts");
-    output.innerText =
+  if (string.match(engRegex) && string.match(morseRegex)) {
+    errorMessage.innerText =
       "Error! You are only able to translate one language at a time.";
     return;
+  }
+
+  if (string.match(morseRegex)) {
+    const translatedString = translateString(string, "/", " ", "", " ");
+    output.innerText = translatedString;
+  } else if (string.match(engRegex)) {
+    const translatedString = translateString(string, " ", "", " ", " / ");
+    output.innerText = translatedString;
   }
 });
 
