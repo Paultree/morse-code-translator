@@ -38,3 +38,7 @@
 2/12/2022
 - Changed to live translation.
 - put in 4 regex that only allows user to input alphabet and -_./ chararcters.
+
+3/12/2022
+- finished writing up the tests.
+- re-did some of the syntax handling inputs and DOM.
