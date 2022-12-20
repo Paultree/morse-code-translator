@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
+    <title>Morse Code Translator</title>
+    <script src="script.js" type="module" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,11 +14,12 @@
     <h1 id="title"></h1>
     <section class="container">
         <form class="container__form">
-            <textarea class="container__form--input" placeholder="TYPE WHAT YOU WANT TRANSLATED HERE.."></textarea>
-            <button class="container__form--submit">Translate</button>
+            <h3>Input:</h3>
+            <textarea id="userInput" class="container__form--input" placeholder="Type your message here: normal text or Morse code using '.', '-' or '_', seperating letters by spaces and words by '/'."></textarea>
         </form>
+        <div id="errorMessage"></div>
         <div class ="container__output" id="translationBox">
-            <h3>Translation Output:</h3>
+            <h3>Output:</h3>
             <div class="container__output--box" id="output"></div>
         </div>
 
